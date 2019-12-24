@@ -1,2 +1,1 @@
-# dotfiles
-My new dotfiles for desktop
+# My new dotfiles for desktop 
