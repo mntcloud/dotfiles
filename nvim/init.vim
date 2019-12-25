@@ -47,6 +47,8 @@ nmap [h <Plug>(GitGutterPrevHunk)
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+map <C-n> :bnext<CR>
+map <C-s> :vsplit<CR>
 map <F3> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
