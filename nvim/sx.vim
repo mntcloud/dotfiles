@@ -1,8 +1,6 @@
 " =============================================================================
 " Filename: autoload/lightline/colorscheme/sx.vim
 " Author: quant0x2
-" License: MIT License
-" Last Change: 2013/09/07 12:23:38.
 " =============================================================================
 let s:white = '#e4e4e4'
 let s:base3 = '#c5c8c6'
