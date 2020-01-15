@@ -23,18 +23,18 @@
     background-color: @background;
     background: #121212;
     foreground: #d8dee9;
-    border-color: @background;
+    border-color: #ffffff;
     spacing: 2;
     font: "Hack 8.5";
 }
 
 #window {
     background-color: @background;
-    border: 0;
     padding: 3.0ch;
-    width: 700px;
-    height: 400px;
+    width: 475px;
+    height: 300px;
     border-radius: 4px;
+    border: 1px solid ;
 }
 
 #mainbox {

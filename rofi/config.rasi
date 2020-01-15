@@ -1,5 +1,5 @@
 configuration {
      theme: "nx";
-     modi: "ssh,window,drun";
-     dpi: 140;
+     modi: "ssh,drun";
+     dpi: 110;
 }
