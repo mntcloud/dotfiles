@@ -1,8 +1,10 @@
 ;;; Commentary: in this config i use packages doom-themes magit evil flycheck go-mode use-package doom-modeline company 
+;;; Melpa repo 
 (require 'package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
+;; Configuration
 (use-package emacs
              :init
              (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
@@ -35,18 +37,3 @@
                             '(bar matches buffer-info remote-host buffer-position parrot selection-info)
                             '(misc-info minor-modes input-method buffer-encoding major-mode process vcs ))
 	     (doom-modeline-set-modeline 'my-simple-line 'default))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (lsp-mode company use-package magit go-mode flycheck evil doom-themes doom-modeline))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:height 120 :family "Menlo")))))
