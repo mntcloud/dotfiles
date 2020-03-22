@@ -9,23 +9,27 @@
 menupopup {
     border-radius: 16px;
 }
-#TabsToolbar {
-     margin-bottom: -20px !important;
+
+#tracking-protection-icon-container {
+    border-image: none !important;
+    border-inline-end: transparent !important;
 }
 
-#nav-bar-customization-target {
-     margin-left: 80px !important;
-     margin-right: 700px !important;
+.toolbar-items {
+    margin-left: 10px;
 }
-#TabsToolbar-customization-target{
-    margin-left: 620px;
+#TabsToolbar {
+     
 }
 .tabbrowser-tab {
      border-radius: 16px 16px 0 0 !important;
-     max-width: 150px !important;
      color: #ffffff !important;
      background-color: var(--accent-color) !important;
-     z-index: 2 !important;
+}
+#back-button > .toolbarbutton-icon {
+     background: none !important;
+     border: none !important;
+     padding: 6px !important;
 }
 .tabbrowser-tab .tab-background[selected="true"]{
      border-radius: 16px 16px 0 0 !important;
@@ -35,25 +39,14 @@ menupopup {
 .tab-line {
      height: 0px !important;
 }
-.titlebar-buttonbox {
-     align: right !important;
-}
-#TabsToolbar {
-     height: 0px !important;
-}
-.toolbar-items {
-     margin-top: 5px !important;
-}
-.titlebar-spacer, #customizableui-special-spring1, #customizableui-special-spring2, #home-button, #library-button, #sidebar-button, #fxa-toolbar-menu-button, .tab-background-inner, .closing-tabs-spacer  {
+.titlebar-spacer, #customizableui-special-spring1, #customizableui-special-spring2, #home-button, #library-button, #sidebar-button, #fxa-toolbar-menu-button, .tab-background-inner, .closing-tabs-spacer   {
      display: none !important;
-}
-.titlebar-buttonbox-container {
-     margin-right: 20px !important;
 }
 #navigator-toolbox {
      background-color: var(--bg-color) !important;
 }
 #nav-bar {
+     max-height: 35px !important;
      background-color: var(--accent-color) !important;
 }
 #PanelUI-button {
@@ -65,12 +58,32 @@ menupopup {
      background-color: var(--accent-color) !important;
      border-radius: 16px !important;
 }
-#urlbar-input-container[focused=true] {
-     border: transparent !important;
+#urlbar[focused] {
+     border: 2px solid #3eb489 !important;
 }
+#urlbar[focused] > #identity-box {
+     fill: #3eb489;
+     fill-opacity: 1;
+} 
 .urlbarView {
      background: none !important;
      background-color: var(--accent-color) !important;
      border-block: none !important;
+}
+#identity-box[pageproxystate="valid"].verifiedDomain > #identity-icon, #identity-box[pageproxystate="valid"].verifiedIdentity > #identity-icon {
+     fill: #3eb489 !important;
+     fill-opacity: 1 !important;
+}
+.tracking-protection-icon-box {
+     fill: #aa6292 !important;
+     fill-opacity: 1 !important;
+}
+#tabs-newtab-button {
+     display: none !important;
+}
+.urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected] {
+     background: none !important;
+     color: none !important;
+     // border-radius: 20px;
 }
 //#3eb489
