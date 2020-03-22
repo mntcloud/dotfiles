@@ -1,4 +1,4 @@
 # NOTE: GNU Emacs configuration is not complete
-# My new dotfiles for desktop
+# Dotfiles for desktop
 <img src="screenshot.png">
 
