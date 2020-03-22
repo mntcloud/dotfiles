@@ -1,0 +1,76 @@
+:root {
+   --bg-color: #212121;
+   --accent-color: #212121;
+}
+* {
+   --arrowpanel-background:var(--accent-color) !important;
+   --tabs-border-color: var(--bg-color) !important;
+}
+menupopup {
+    border-radius: 16px;
+}
+#TabsToolbar {
+     margin-bottom: -20px !important;
+}
+
+#nav-bar-customization-target {
+     margin-left: 80px !important;
+     margin-right: 700px !important;
+}
+#TabsToolbar-customization-target{
+    margin-left: 620px;
+}
+.tabbrowser-tab {
+     border-radius: 16px 16px 0 0 !important;
+     max-width: 150px !important;
+     color: #ffffff !important;
+     background-color: var(--accent-color) !important;
+     z-index: 2 !important;
+}
+.tabbrowser-tab .tab-background[selected="true"]{
+     border-radius: 16px 16px 0 0 !important;
+     background-color: var(--accent-color) !important;
+     background-image: none !important;
+}
+.tab-line {
+     height: 0px !important;
+}
+.titlebar-buttonbox {
+     align: right !important;
+}
+#TabsToolbar {
+     height: 0px !important;
+}
+.toolbar-items {
+     margin-top: 5px !important;
+}
+.titlebar-spacer, #customizableui-special-spring1, #customizableui-special-spring2, #home-button, #library-button, #sidebar-button, #fxa-toolbar-menu-button, .tab-background-inner, .closing-tabs-spacer  {
+     display: none !important;
+}
+.titlebar-buttonbox-container {
+     margin-right: 20px !important;
+}
+#navigator-toolbox {
+     background-color: var(--bg-color) !important;
+}
+#nav-bar {
+     background-color: var(--accent-color) !important;
+}
+#PanelUI-button {
+     border-color: var(--accent-color) !important;
+     border-image-source: none !important;
+}
+#urlbar {
+     border: transparent !important;
+     background-color: var(--accent-color) !important;
+     border-radius: 16px !important;
+}
+#urlbar-input-container[focused=true] {
+     border: transparent !important;
+}
+.urlbarView {
+     background: none !important;
+     background-color: var(--accent-color) !important;
+     border-block: none !important;
+}
+//#3eb489
