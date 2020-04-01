@@ -1,10 +1,23 @@
+/* -moz-window-inactive */
 :root {
-   --bg-color: #212121;
-   --accent-color: #212121;
+   --bg-color: #121212;
+   --accent-color: #121212;
+   --fill-color: #ffffff;
+   --fill-color-1: #a8a8a8;
 }
 * {
+   --backbutton-active-background: none !important;
+   --lwt-toolbarbutton-icon-fill: #a8a8a8 !important;
+   --toolbarbutton-outer-padding: none !important;
+   --toolbarbutton-border-radius: 0px !important;
+   --backbutton-hover-background: none !important;
+   --toolbarbutton-hover-background: none !important;
+   --toolbarbutton-active-background: none !important;
    --arrowpanel-background:var(--accent-color) !important;
    --tabs-border-color: var(--bg-color) !important;
+}
+.toolbarbutton-1 {
+     fill-opacity: 1 !important;
 }
 menupopup {
     border-radius: 16px;
@@ -21,16 +34,53 @@ menupopup {
 #TabsToolbar {
      
 }
+.tab-text {
+     color: #a8a8a8;
+}
+.tab-text[selected=true]{color: #ffffff;}
 .tabbrowser-tab {
      border-radius: 16px 16px 0 0 !important;
      color: #ffffff !important;
      background-color: var(--accent-color) !important;
 }
+
 #back-button > .toolbarbutton-icon {
-     background: none !important;
-     border: none !important;
+     margin-left: 3px !important;
      padding: 6px !important;
+     border: none !important;
+     border-radius: 0px !important;
 }
+toolbarbutton[disabled=true] > .toolbarbutton-icon, toolbarbutton > .toolbarbutton-icon, toolbarbutton > .toolbarbutton-icon:hover, toolbarbutton:-moz-window-inactive > .toolbarbutton-icon {}
+#back-button[disabled=true] > .toolbarbutton-icon, #forward-button[disabled=true] > .toolbarbutton-icon, #back-button[disabled=true] > .toolbarbutton-icon:hover, #forward-button[disabled=true]>.toolbarbutton-icon:hover, #forward-button:-moz-window-inactive .toolbarbutton-icon,#nav-bar-customization-target:-moz-window-inactive toolbarbutton {
+     fill: #303030 !important;
+}
+#forward-button[disabled=true] {
+     opacity: 1 !important;
+     fill-opacity: none !important;
+}
+#forward-button > .toolbarbutton-icon:hover {
+     fill: #ffffff !important;
+     fill-opacity: 1 !important;
+}
+#forward-button > .toolbarbutton-icon {
+    /* fill-opacity: none !important; */
+}
+#back-button[disabled=true] {
+     opacity: 1 !important;
+     fill-opacity: none !important;
+}
+
+#nav-bar-customization-target toolbarbutton:hover, #nav-bar toolbarbutton:hover {
+     opacity: 1 !important;
+     fill-opacity: 1 !important;
+     fill: var(--fill-color) !important;
+     border: none !important;
+}
+
+#nav-bar-customization-target toolbarbutton {
+     opacity: 1 !important;
+}
+
 .tabbrowser-tab .tab-background[selected="true"]{
      border-radius: 16px 16px 0 0 !important;
      background-color: var(--accent-color) !important;
@@ -54,17 +104,18 @@ menupopup {
      border-image-source: none !important;
 }
 #urlbar {
-     border: transparent !important;
+     border: 1px solid var(--accent-color) !important;
      background-color: var(--accent-color) !important;
      border-radius: 16px !important;
 }
 #urlbar[focused] {
-     border: 2px solid #3eb489 !important;
+     box-shadow: none !important;
+     border: 1px solid var(--accent-color) !important;
 }
 #urlbar[focused] > #identity-box {
-     fill: #3eb489;
-     fill-opacity: 1;
-} 
+     fill: #3eb489 !important;
+     fill-opacity: 1 !important;
+}
 .urlbarView {
      background: none !important;
      background-color: var(--accent-color) !important;
@@ -74,8 +125,12 @@ menupopup {
      fill: #3eb489 !important;
      fill-opacity: 1 !important;
 }
-.tracking-protection-icon-box {
-     fill: #aa6292 !important;
+#identity-box:active {
+     fill: var(--fill-color)!important;
+     fill-opacity: 1 !important;
+}
+#identity-box, .tracking-protection-icon-box {
+     fill: var(--lwt-toolbarbutton-icon-fill) !important;
      fill-opacity: 1 !important;
 }
 #tabs-newtab-button {
@@ -85,5 +140,9 @@ menupopup {
      background: none !important;
      color: none !important;
      // border-radius: 20px;
+}
+
+#identity-icon {
+     fill-opacity: 1 !important;
 }
 //#3eb489
