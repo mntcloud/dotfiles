@@ -9,8 +9,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdtree'
+Plugin 'fatih/vim-go'
+Plugin 'rust-lang/rust.vim'
 Plugin 'ycm-core/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'majutsushi/tagbar'
