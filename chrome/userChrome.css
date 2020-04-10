@@ -1,9 +1,10 @@
 /* -moz-window-inactive */
 :root {
    --bg-color: #121212;
-   --accent-color: #121212;
    --fill-color: #ffffff;
    --fill-color-1: #a8a8a8;
+   --selected-url-bg: #ffffff;
+   --selected-url-fg: #000000;
 }
 * {
    --backbutton-active-background: none !important;
@@ -13,8 +14,8 @@
    --backbutton-hover-background: none !important;
    --toolbarbutton-hover-background: none !important;
    --toolbarbutton-active-background: none !important;
-   --arrowpanel-background:var(--accent-color) !important;
-   --tabs-border-color: var(--bg-color) !important;
+   --arrowpanel-background: #121212 !important;
+   --tabs-border-color: #121212 !important;
 }
 .toolbarbutton-1 {
      fill-opacity: 1 !important;
@@ -31,9 +32,6 @@ menupopup {
 .toolbar-items {
     margin-left: 10px;
 }
-#TabsToolbar {
-     
-}
 .tab-text {
      color: #a8a8a8;
 }
@@ -41,7 +39,7 @@ menupopup {
 .tabbrowser-tab {
      border-radius: 16px 16px 0 0 !important;
      color: #ffffff !important;
-     background-color: var(--accent-color) !important;
+     background-color: var(--bg-color) !important;
 }
 
 #back-button > .toolbarbutton-icon {
@@ -70,6 +68,7 @@ toolbarbutton[disabled=true] > .toolbarbutton-icon, toolbarbutton > .toolbarbutt
      fill-opacity: none !important;
 }
 
+
 #nav-bar-customization-target toolbarbutton:hover, #nav-bar toolbarbutton:hover {
      opacity: 1 !important;
      fill-opacity: 1 !important;
@@ -83,7 +82,7 @@ toolbarbutton[disabled=true] > .toolbarbutton-icon, toolbarbutton > .toolbarbutt
 
 .tabbrowser-tab .tab-background[selected="true"]{
      border-radius: 16px 16px 0 0 !important;
-     background-color: var(--accent-color) !important;
+     background-color: var(--bg-color) !important;
      background-image: none !important;
 }
 .tab-line {
@@ -97,30 +96,42 @@ toolbarbutton[disabled=true] > .toolbarbutton-icon, toolbarbutton > .toolbarbutt
 }
 #nav-bar {
      max-height: 35px !important;
-     background-color: var(--accent-color) !important;
+     background-color: var(--bg-color) !important;
 }
 #PanelUI-button {
-     border-color: var(--accent-color) !important;
+     border-color: var(--bg-color) !important;
      border-image-source: none !important;
 }
-#urlbar {
-     border: 1px solid var(--accent-color) !important;
-     background-color: var(--accent-color) !important;
+
+#urlbar[focused] {
+      border: -1px solid #000000;
+}
+
+#urlbar #urlbar-background {
+     margin: 2px !important;
+     background-image: none !important;
+     border: 0px solid var(--bg-color) !important;
+     background-color: var(--bg-color) !important;
      border-radius: 16px !important;
 }
-#urlbar[focused] {
+#urlbar[focused] #urlbar-background {
+     background-color: var(--bg-color) !important;
      box-shadow: none !important;
-     border: 1px solid var(--accent-color) !important;
+     border: none !important;
+     /*border: 0px solid var(--bg-color) !important;*/
 }
+
 #urlbar[focused] > #identity-box {
      fill: #3eb489 !important;
      fill-opacity: 1 !important;
 }
+/*
 .urlbarView {
      background: none !important;
      background-color: var(--accent-color) !important;
      border-block: none !important;
 }
+*/
 #identity-box[pageproxystate="valid"].verifiedDomain > #identity-icon, #identity-box[pageproxystate="valid"].verifiedIdentity > #identity-icon {
      fill: #3eb489 !important;
      fill-opacity: 1 !important;
@@ -136,13 +147,26 @@ toolbarbutton[disabled=true] > .toolbarbutton-icon, toolbarbutton > .toolbarbutt
 #tabs-newtab-button {
      display: none !important;
 }
+/*
 .urlbarView:not(.megabar) .urlbarView-row:not([type="tip"])[selected] {
      background: none !important;
      color: none !important;
-     // border-radius: 20px;
 }
+*/
 
+.urlbarView-body-inner, .search-one-offs {
+     border: none !important;
+}
+.urlbarView-row[aria-selected=true] .urlbarView-row-inner {
+     background-color: var(--selected-url-bg) !important;
+     color: var(--selected-url-fg) !important;
+     border-radius: 4px !important;
+}
 #identity-icon {
      fill-opacity: 1 !important;
 }
-//#3eb489
+#identity-icon:-moz-window-inactive {
+     fill-opacity: 0.2 !important;
+}
+
+/*#3eb489*/
