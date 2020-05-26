@@ -24,6 +24,22 @@ menupopup {
     border-radius: 16px;
 }
 
+#PersonalToolbar {
+     background-color: var(--bg-color) !important;
+}
+
+.bookmark-item {
+     margin-left: 10px !important;
+     border-radius: 4px !important;
+}
+
+.bookmark-item:hover {
+     background-color: #ffffff !important;
+     color: #000000 !important;
+     transition-duration: 0.5s !important;
+     border-radius: 4px !important;
+}
+
 #tracking-protection-icon-container {
     border-image: none !important;
     border-inline-end: transparent !important;
