@@ -109,7 +109,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: Hack
+    family: Jetbrains Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -120,10 +120,10 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack
+    family: Jetbrains Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    #style: Bold
 
   # Italic font face
   italic:
@@ -131,24 +131,24 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Hack
+    family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    #style: Italic
 
   # Bold italic font face
-  #bold_italic:
+  bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    #family: Hack
+    family: Jetbrains Mono
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
   # Point size
-  size: 8.5
+  size: 9.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -259,35 +259,34 @@ font:
   #   `- { index: 16, color: '0xff00ff' }`
   #
   #indexed_colors: []
-  
-  # Colors (Nord)
+  # Colors (Tomorrow Night Bright)
 colors:
-   # Default colors
-   primary:
-     background: '0x121212'
-     foreground: '0xD8DEE9'
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#eaeaea'
 
-   # Normal colors
-   normal:
-     black:   '0x1a1a1a'
-     red:     '0xBF616A'
-     green:   '0xA3BE8C'
-     yellow:  '0xEBCB8B'
-     blue:    '0x81A1C1'
-     magenta: '0xB48EAD'
-     cyan:    '0x88C0D0'
-     white:   '0xE5E9F0'
+  # Normal colors
+  normal:
+    black:   '#000000'
+    red:     '#d54e53'
+    green:   '#b9ca4a'
+    yellow:  '#e6c547'
+    blue:    '#7aa6da'
+    magenta: '#c397d8'
+    cyan:    '#70c0ba'
+    white:   '#424242'
 
-   # Bright colors
-   bright:
-     black:   '0x4C566A'
-     red:     '0xBF616A'
-     green:   '0xA3BE8C'
-     yellow:  '0xEBCB8B'
-     blue:    '0x81A1C1'
-     magenta: '0xB48EAD'
-     cyan:    '0x8FBCBB'
-     white:   '0xECEFF4'
+  # Bright colors
+  bright:
+    black:   '#666666'
+    red:     '#ff3334'
+    green:   '#9ec400'
+    yellow:  '#e7c547'
+    blue:    '#7aa6da'
+    magenta: '#b77ee0'
+    cyan:    '#54ced6'
+    white:   '#2a2a2a'
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once
@@ -318,7 +317,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.98
+background_opacity: 0.92
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
