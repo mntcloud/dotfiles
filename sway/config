@@ -20,14 +20,13 @@ set $menu rofi -show drun
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/.wallpapers/neon.jpg fill
+output * bg ~/.wallpaper/fernando-correa-rr.jpg center "#eeebe2"
 
 default_border pixel 2
 default_floating_border normal 0 
-titlebar_padding 10
+titlebar_padding 2
 title_align center
-#gaps top 1
-#gaps right 3
+#gaps inner 2
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #ffffff #ffffff #000000 #ffffff   #ffffff
@@ -50,10 +49,10 @@ client.background       #ffffff
 # Example configuration:
 #
 exec swayidle -w \
-          timeout 300 'swaylock -f -i ~/Downloads/neon.jpg' \
+          timeout 300 'swaylock --image .wallpaper/fernando-correa-rr.jpg -s center -c eeebe2' \
           timeout 600 'swaymsg "output * dpms off"' \
                resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -i ~/Downloads/neon.jpg'
+          before-sleep 'swaylock --image .wallpaper/fernando-correa-rr.jpg -s center -c eeebe2'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -95,6 +94,8 @@ exec swayidle -w \
     bindsym XF86AudioNext exec playerctl next
     bindsym XF86AudioPrev exec playerctl previous
 
+    # lock screen
+    bindsym Ctrl+Shift+l exec swaylock --image .wallpaper/fernando-correa-rr.jpg -s center -c eeebe2
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
