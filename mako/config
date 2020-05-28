@@ -1,10 +1,11 @@
 width=300
 height=10
-font=Hack 9
+font=JetBrains Mono 9
 icons=1
 max-icon-size=48
 border-radius=4
 default-timeout=8000
-[app-name="Spotify"]
-background-color=#1ed761
-text-color=#000000
+border-size=4
+border-color=#ffffff
+background-color=#121212
+text-color=#ffffff
