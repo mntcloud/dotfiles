@@ -33,14 +33,33 @@ window#waybar.firefox {
     border: none;
 }
 
-window#waybar.yuzu {
+window#waybar.yuzu  {
     background-color: #c95d5d;
     color: #ffffff;
 }
+window#waybar.empty #mode,
+window#waybar.empty #workspaces button.focused,
+window#waybar.empty #clock,
+window#waybar.empty #cpu,
+window#waybar.empty #memory,
+window#waybar.empty #temperature,
+window#waybar.empty #network,
+window#waybar.empty #pulseaudio,
+window#waybar.empty #mode,
+window#waybar.empty #window {
+    background-color: #212121;
+    color: #ffffff;
+}
+
+window#waybar.empty #workspaces button {
+      color: #212121;
+}
 
 #workspaces button {
-    padding: 0 6px;
+    padding: 0 2px;
+    margin-top: 3px;
     margin-bottom: 3px;
+    margin-left: 2px;
     background-color: transparent;
     color: #ffffff;
     border-radius: 4px;
@@ -63,7 +82,11 @@ window#waybar.yuzu {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #ffffff;
+}
+
+#clock {
+    margin-right: 4px;
 }
 
 #clock,
@@ -80,8 +103,11 @@ window#waybar.yuzu {
 #window,
 #idle_inhibitor,
 #mpd {
-    padding: 0 12px;
-    padding-bottom: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-top: 3px;
     margin-left: 5px;
     margin-bottom: 3px;
     color: #000000;
