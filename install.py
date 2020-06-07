@@ -83,23 +83,12 @@ print("""
                                                          files 
                                                          by quant0x2
 """)
-#checkpaths = [".config", ".config/nvim", ".config/fish", ".config/fish/functions"]
-# check platform
 if sys.platform == "darwin":
-    #paths = ["nvim/init.vim", "fish/fish_prompt.fish"]
-    #topaths = [checkpaths[1]+"/init.vim", checkpaths[3]+"/fish_prompt.fish"]
-    #print("Hello macOS!")
-    #print("Installing fish_prompt.fish and init.vim...")
-    #print("Checking directories...")
-    #isDirExist(checkpaths)
-    #print("Copying files...")
-    #for i in range(len(paths)):
-    #    copy(paths[i], dirPosition() + topaths[i])
-    #print("ok")
-    exclude = [".git","chrome", "gtk", "emacs.d"]
-    files, paths = scanDirectory(exclude)
-    isDirExist(paths)
-    for f in files:
-        copy(f, configPosition() + f)
+    print("Hello macOS!")
 elif sys.platform == "linux":
     print("Hello Tux!")
+exclude = [".git","chrome", "gtk", "emacs.d"]
+files, paths = scanDirectory(exclude)
+isDirExist(paths)
+for f in files:
+    copy(f, configPosition() + f)
