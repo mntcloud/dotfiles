@@ -1,4 +1,4 @@
-# Dotfiles
-# Installation process
-Run install.py script <br>
-`` python3 install.py ``
+## dotfiles 2.0
+## Installation process
+Run install.py script
+`` python install.py ``
