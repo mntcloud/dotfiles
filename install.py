@@ -1,5 +1,5 @@
 import sys 
-from os import path, listdir, mkdir
+from os import path, listdir, mkdir, environ
 from shutil import which
 
 # Simple copy function
@@ -14,8 +14,19 @@ def copy(filepath, to):
     fin.close()
     fout.close()
 
+# Check if config folder exists and if directory doesn't exist, creates a new one in home folder
+def checkConfigFolder():
+    home = environ["HOME"]
+    if not path.exists(home + "/.config"):
+        print(".config folder doesn't exist!")
+        print("creating a new one...")
+        mkdir(home + "/.config")
+        print("ok")
+    else:
+        print(".config folder exists!")
+
 # Returns position of a .config folder 
-def configPosition():
+def configFolderPosition():
     for v in listdir("."):
         if v == ".config":
             return "./config/"
@@ -27,15 +38,15 @@ def configPosition():
         path += "../"
 
 # Checks if directory exists in .config and if directory doesn't exist, creates a new one
-def isDirExist(directories):
+def checkDir(directories):
     for dir in directories:
         print(dir)
-        if not path.exists(configPosition() + dir):
+        if not path.exists(configFolderPosition() + dir):
             print("This dir does not exist!")
             answer = input("Create a new dir? y or n\n")
             if answer == "y":
                print("Creating a new one...")
-               mkdir(configPosition() + dir)
+               mkdir(configFolderPosition() + dir)
                print("ok")
             else:
                continue
@@ -81,14 +92,15 @@ print("""
     /  /__________/  /  /  /___________/  /        /   /
    /________________/  /________________ /        /__ /        
                                                          files 
-                                                         by quant0x2
+                                                          by quant0x2
 """)
 if sys.platform == "darwin":
     print("Hello macOS!")
 elif sys.platform == "linux":
     print("Hello Tux!")
+checkConfigFolder()
 exclude = [".git","chrome", "gtk", "emacs.d"]
 files, paths = scanDirectory(exclude)
-isDirExist(paths)
+checkDir(paths)
 for f in files:
-    copy(f, configPosition() + f)
+    copy(f, configFolderPosition() + f)
