@@ -1,4 +1,4 @@
-import sys 
+from sys import platform 
 from os import path, listdir, mkdir, environ
 from shutil import which
 
@@ -80,24 +80,11 @@ def scanDirectory(exclude=None):
                             directories += [position]
     return data, directories
 
-print("""
-            _________           _________________      _____________
-           /   ____  \         /  ___________    /    /___    _____/
-          /  /     \  \       /  /           /  /        /   /
-         /  /       \  \     /  /           /  /        /   /
-        /  /         \  \   /  /           /  /        /   /
-       /  /          /  /  /  /           /  /        /   /
-      /  /          /  /  /  /           /  /        /   /
-     /  /          /  /  /  /           /  /        /   /
-    /  /__________/  /  /  /___________/  /        /   /
-   /________________/  /________________ /        /__ /        
-                                                         files 
-                                                          by quant0x2
-""")
-if sys.platform == "darwin":
-    print("Hello macOS!")
-elif sys.platform == "linux":
-    print("Hello Tux!")
+print("Dotfiles by quant0x2")
+if platform == "darwin":
+    print("Hello, macOS!")
+elif platform == "linux":
+    print("Hello, Tux!")
 checkConfigFolder()
 exclude = [".git","chrome", "gtk", "emacs.d"]
 files, paths = scanDirectory(exclude)
