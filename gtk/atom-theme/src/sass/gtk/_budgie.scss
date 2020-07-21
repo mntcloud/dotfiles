@@ -8,12 +8,12 @@
 // this transparent..
 
 // Raven
-$raven_base_color: if($variant =='light', #f5f5f5, #1b1b1b);
-$raven_bg_color: if($variant =='light', #dedede, #1f1f1f);
+$raven_base_color: if($variant =='light', #f5f5f5, lighten($panel_bg, 1%));
+$raven_bg_color: if($variant =='light', #dedede, $panel_bg);
 $raven_fg_color: $text_color;
-$raven_header_bg_color: if($variant =='light', #efefef, #181818);
+$raven_header_bg_color: if($variant =='light', #efefef, lighten($panel_bg, 2%));
 $raven_header_fg_color: $text_color;
-$raven_button_bg_color: $button_bg;
+$raven_button_bg_color: lighten($panel_bg, 2%);
 $raven_border_color: if($variant =='light', rgba(black, 0.10), rgba(black, 0.35));
 
 $raven_radius: 10px;
@@ -46,10 +46,10 @@ $raven_padding: 8px;
 
 %budgie_button {
   @include button(flat-normal);
-  &:hover { @include button(flat-hover); }
-  &:checked { @include button(flat-checked); }
-  &:active { @include button(flat-active); }
-  &:disabled { @include button(flat-insensitive); }
+  &:hover { @include wmbutton(flat-hover); }
+  &:checked { @include wmbutton(flat-checked); }
+  &:active { @include wmbutton(flat-active); }
+  &:disabled { @include wmbutton(flat-insensitive); }
 }
 
 %raven_button {
@@ -108,9 +108,9 @@ $raven_padding: 8px;
 .budgie-popover {
   margin: 0;
   padding: 0;
-  border-color: if($variant=='light', $borders_color, lighten($menu_bg, 8%));
+  border-color: if($variant=='light', $borders_color, lighten($panel_bg, 5%));
   border-radius: $wm_radius;
-  background-color: if($trans == 'true', rgba($bg_color, 0.95), $bg_color);
+  background-color: if($trans == 'true', rgba($panel_bg, 0.95), $panel_bg);
   box-shadow: 0 1px 2px 0 if($variant == 'light', opacify($wm_shadow, 0.15), opacify($wm_shadow, 0.1)),
               0 2px 3px 0 if($variant == 'light', opacify($wm_shadow, 0.15), opacify($wm_shadow, 0.1)),
               0 0 0 1px if($variant=='light', $borders_color, rgba($dark_borders_color, 0.55)),
@@ -253,7 +253,7 @@ window.budgie-popover:not(.csd) {
 .budgie-menu {
   &.background {
     padding: 0;
-    background-color: $base_color;
+    background-color: $panel_bg;
   }
 
   scrollbar,
@@ -382,24 +382,23 @@ popover.background.places-menu {
   background-clip: padding-box;
 
   &.transparent {
-    background-color: rgba($panel_bg, 0.65);
+    background-color: rgba($panel_bg, 0.88);
     box-shadow: none;
   }
 
   .top & {
-    border-bottom: 1px solid if($variant == 'light', $panel_border_color, $header_border);
-    background-image: linear-gradient(0deg, $panel_bottom_color 0%, $panel_top_color 100%);
+    background-color: $panel_bg;
   }
 
   .top &.transparent {
-    background-color: transparent;
-    background-image: linear-gradient(0deg, rgba($panel_bottom_color, 0.85) 0%, rgba($panel_top_color, 0.85) 100%);
+    background-color: rgba($panel_bg, 0.88)
   }
 
   .bottom & {
     border: solid $panel_border_color;
     border-width: 1px 1px 0 1px;
-    border-radius: $wm_radius $wm_radius 0 0;
+    border-radius: 6px 6px 0 0;
+    padding: 0px 8px 0px 8px;
 
     &.dock-mode {
       border-radius: 0 0 0 0;
@@ -666,7 +665,7 @@ $pos_list: ((top, bottom), (left, right), (right, left));
 
 // .bottom .shadow-block { background-image: none; }
 
-$raven_opacity: if($variant =='light', 0.85, 0.95);
+$raven_opacity: if($variant =='light', 0.85, 0.87);
 
 // Raven
 .raven {
@@ -780,7 +779,7 @@ $raven_opacity: if($variant =='light', 0.85, 0.95);
       // depth-0 OSD materials for MPRIS.
       border-radius: $raven_radius;
       border: none;
-      background-color: if($variant =='light', rgba(black, 0.65), rgba(black, 0.35));
+      background-color: if($variant =='light', rgba(black, 0.95), rgba(black, 0.95));
       color: rgba(white, 0.65);
 
       // .raven-header {
@@ -789,7 +788,7 @@ $raven_opacity: if($variant =='light', 0.85, 0.95);
       // }
 
       .raven-background {
-        background-color: rgba(black, 0.25);
+        background-color: rgba($panel_bg, 0.95);
         margin-bottom: 0; // unset parent margin
 
         image { color: rgba(white, 0.15); }
@@ -1091,7 +1090,7 @@ calendar.raven-calendar {
   background-color: transparent;
   background-image: none;
 
-  .notification-title { font-size: 120%; }
+  .notification-title { font-size: 105%; }
   .notification-body { @extend %dim-label; }
 }
 
@@ -1116,6 +1115,7 @@ window.budgie-switcher-window {
   border-radius: $wm_radius;
   background-color: transparent;
   background-image: none;
+  text-align: center;
 
   // draw actual backgrounds and shadows
   .drop-shadow {
@@ -1129,8 +1129,10 @@ window.budgie-switcher-window {
     margin: 2px;
     border-radius: $wm_radius;
     -gtk-outline-radius: $wm_radius;
-    // background-color: transparent;
-    background-image: none;
+    //background-color: transparent;
+    &:selected {
+      background-color: #ffffff;
+    }
   }
 }
 
@@ -1150,7 +1152,7 @@ window.budgie-switcher-window {
               0 0 0 1px if($variant=='light', rgba($borders_color, 0.15), rgba($dark_borders_color, 0.55)),
               inset 0 0 0 1px rgba(white, 0.06);
 
-  background-color: if($trans == 'true', rgba($base_color, 0.95), $base_color);
+  background-color: if($trans == 'true', rgba($panel_bg, 0.95), $panel_bg);
   background-image: none;
 
   button { @extend %budgie_button; }
@@ -1160,8 +1162,8 @@ window.budgie-switcher-window {
 
 %budgie_dialog {
   border-radius: $wm_radius;
-  background-color: $bg_color;
-  @if $variant == 'dark' { border: 1px solid lighten($menu_bg, 10%); }
+  background-color: $panel_bg;
+  @if $variant == 'dark' { border: 1px solid $panel_bg; }
 
   &.background {border-radius: $wm_radius; }
   decoration { border-radius: $wm_radius; }
@@ -1173,7 +1175,7 @@ window.budgie-switcher-window {
   @extend %budgie_dialog;
 
   label:not(:last-child),
-  .dialog-title { font-size: 120%; }
+  .dialog-title { font-size: 105%; }
 
   buttonbox.linked.horizontal > button {
     padding: 4px 16px;
@@ -1186,6 +1188,7 @@ window.budgie-switcher-window {
   }
 
   buttonbox.linked.horizontal > button:not(.suggested-action):not(.destructive-action) {
+    @include button(flat-normal);
     &:hover {
       @include button(flat-hover);
       border-color: $dark_borders_color;
@@ -1212,7 +1215,7 @@ window.budgie-switcher-window {
 .budgie-run-dialog {
   @extend %budgie_dialog;
 
-  background-color: $base_color;
+  background-color: $panel_bg;
 
   entry.search {
     font-size: 120%;
@@ -1220,7 +1223,7 @@ window.budgie-switcher-window {
     box-shadow: inset 0 1px $highlight_color;
     background-color: transparent;
   }
-
+  list { background-color: rgba($panel_bg, 0.87); }
   list .dim-label { opacity: 1; }
 
   scrolledwindow { border-top: 1px solid $borders_color; }

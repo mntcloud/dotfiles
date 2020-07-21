@@ -143,6 +143,200 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
+@mixin wmbutton($t, $actionb_bg:red, $actionb_fg: green) {
+//
+// Button drawing function
+//
+// $t:    button type,
+// $actionb_bg, $actionb_fg: used for destructive and suggested action buttons
+
+  @if $t==flat-normal {
+  //
+  // normal button
+  //
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    background-clip: if($variant=='light', border-box, padding-box);
+  }
+
+  @else if $t==flat-hover {
+  //
+  // hovered button
+  //
+    color: lighten($fg_color, 8%);
+    background-color: if($variant=='light', rgba(black, 0.15), lighten($panel_bg, 8%));
+    background-image: none;
+    // border-color: if($variant=='light', rgba(black, 0.15), rgba(white, 0.15));
+  }
+
+  @else if $t==flat-active {
+  //
+  // pushed button
+  //
+    background-image: none;
+    color: lighten($fg_color, 10%);
+    background-color: if($variant=='light', rgba(black, 0.5), lighten($panel_bg, 10%));
+  }
+
+  @else if $t==flat-checked {
+  //
+  // pushed button
+  //
+    background-image: none;
+    color: lighten($fg_color, 12%);
+    background-color: if($variant=='light', rgba(black, 0.5), lighten($panel_bg, 12%));
+  }
+
+  @else if $t==flat-insensitive {
+  //
+  // insensitive button
+  //
+    label, & { color: $disabled_fg_color; }
+
+    background-color: transparent;
+    //    border: none;
+  }
+
+  @else if $t==flat-insensitive-active {
+  //
+  // insensitive pushed button
+  //
+    label, & { color: transparentize($selected_fg_color, 0.2); }
+
+    background-color: lighten($fg_color, 20%);
+    opacity: 0.6;
+  }
+
+  @if $t==header-normal {
+  //
+  // normal header-bar button
+  //
+    border-color: $panel_bg;
+    color: $header_fg;
+    background-color: $panel_bg;
+    //background-image: $header_button_image;
+
+    @if $variant == 'dark' {
+      border: none;
+      box-shadow: inset 0 1px $panel_bg;
+    }
+  }
+
+  @else if $t==header-hover {
+  //
+  // hovered header-bar button
+  //
+    border-color: lighten($panel_bg, 8%);
+    color: darken($header_fg, 2%);
+    background-color: lighten($panel_bg, 8%);
+    @if $variant == 'dark' { box-shadow: inset 0 1px lighten($panel_bg, 8%); }
+  }
+
+  @else if $t==header-active {
+  //
+  // pushed header-bar button
+  //
+    color: $selected_fg_color;
+    background-color: lighten($panel_bg, 10%);
+    background-image: none;
+    border-color: lighten($panel_bg, 10%);
+  }
+
+  @else if $t==header-checked {
+  //
+  // pushed header-bar button
+  //
+    color: if($variant=='light', $selected_fg_color, $fg_color);
+    background-color: lighten($panel_bg, 10%);;
+    border-color: lighten($panel_bg, 10%);
+    @if $variant == 'dark' { box-shadow: inset 0 1px lighten($panel_bg, 10%); }
+  }
+
+  @else if $t==header-insensitive {
+  //
+  // insensitive header-bar button
+  //
+    label, & { color: rgba($header_fg, 0.35); }
+    background-color: $panel_bg;
+
+    @if $variant == 'dark' { box-shadow: inset 0 1px $panel_bg; }
+  }
+
+  @else if $t==header-insensitive-active {
+  //
+  // header-bar insensitive pushed button
+  //
+    color: rgba($selected_fg_color, 0.35);
+    background-color: rgba($panel_bg, 0.55);
+  }
+
+  @else if $t==osd {
+  //
+  // normal osd button
+  //
+    color: $osd_fg_color;
+    border-color: $osd_button_border;
+    background-color: $osd_button_bg;
+    box-shadow: none;
+  }
+
+  @else if $t==osd-hover {
+  //
+  // active osd button
+  //
+    color: $osd_fg_color;
+    border-color: $osd_button_border;
+    background-color: opacify(lighten($osd_button_bg, 7%), 0.1);
+    box-shadow: none;
+  }
+
+  @else if $t==osd-active {
+  //
+  // active osd button
+  //
+    color: $selected_fg_color;
+    border-color: if($variant == 'light', $selected_bg_color, $osd_button_border);
+    background-color: $selected_bg_color;
+    background-image: none;
+    box-shadow: none;
+  }
+
+  @else if $t==osd-insensitive {
+  //
+  // insensitive osd button
+  //
+    color: $osd_disabled_fg_color;
+    border-color: $osd_button_border;
+    background-color: transparentize($osd_button_bg, 0.15);
+    box-shadow: none;
+  }
+
+  @else if $t==suggested_destructive {
+  //
+  // suggested or destructive action buttons
+  //
+    @if $variant == 'light' { background-clip: border-box; }
+
+    color: $actionb_fg;
+    background-color: $actionb_bg;
+    border-color: if($variant == 'light', darken($actionb_bg, 6%), $dark_borders_color);
+    background-image: none;
+    box-shadow: if($variant=='light', none, (inset 0 1px rgba(white, 0.15), inset 0 -1px rgba(white, 0.03)));
+  }
+
+  @else if $t==undecorated {
+  //
+  // reset
+  //
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+  }
+}
+
+
 // Buttons
 
 @mixin button($t, $actionb_bg:red, $actionb_fg: green) {
@@ -158,12 +352,12 @@ $switch_animation: switch_ripple_effect 0.3s cubic-bezier(0, 0, 0.2, 1);
   //
     color: $fg_color;
     border-color: $button_borders;
-    border-top-color: $button_borders_top;
-    border-bottom-color: $button_borders_bottom;
+    //border-top-color: $button_borders_top;
+    //border-bottom-color: $button_borders_bottom;
     background-color: $button_bg;
     @if $variant=='light' { box-shadow: $shadow_3; }
     @if $variant=='dark' {
-      box-shadow: inset 0 1px $button_highlight, $shadow_3;
+      box-shadow: inset 0 1px $button_borders, $shadow_3;
     }
   }
 

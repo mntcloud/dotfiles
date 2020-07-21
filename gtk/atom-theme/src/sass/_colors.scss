@@ -120,11 +120,11 @@ $menu_bd:                           if($variant == 'light', rgba(black, 0.05), r
 // Panel colors
 $panel_bg:                          if($variant == 'light', #f1f1f1, #000000);
 $panel_selected_bg:                 #d8dee9;
-$panel_selected_fg:                 #000000;
+$panel_selected_fg:                 #121212;
 $panel_track_color:                 $panel_selected_fg;
 
 @if $trans == 'true' {
-  $panel_bg:                        if($variant == 'light', rgba(#f1f1f1, 0.85), rgba(#000000, 0.85));
+  $panel_bg:                        if($variant == 'light', rgba(#f1f1f1, 0.85), #000000);
 }
 
 $panel_fg:                          $text_color;
