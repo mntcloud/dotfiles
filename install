@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+
+from sys import platform 
+from os import path, listdir, mkdir, environ
+from shutil import which
+
+print("Dotfiles by quant0x2")
+
+if platform == "darwin":
+    print("Hello, macOS!")
+elif platform == "linux":
+    print("Hello, Tux!")
+
+CONFIGPATH = environ["HOME"] + "/.config/"
+
+if not path.exists(CONFIGPATH):
+    print(".config folder doesn't exist!")
+    print("creating a new one...")
+    mkdir(CONFIGPATH)
+    print("ok")
+else:
+    print(".config folder exists!")
+
+exclude = [".git","chrome", "gtk", "emacs.d"]
+
+files = []
+directories = []
+
+for fin in listdir():
+    if path.isdir(fin) and fin not in exclude:
+        if which(fin):
+            directories += [fin]
+            folders = [fin]
+            for folder in folders:
+                for file in listdir(folder):
+                    position = folder+"/"+file
+                    if path.isfile(position):
+                        files += [position]
+                    elif path.isdir(position):
+                        folders += [position]
+                        directories += [position]
+
+for dir in directories:
+    print(dir)
+    if not path.exists(CONFIGPATH + dir):
+        print("This dir does not exist!")
+        answer = input("Create a new dir? yes or no\n")
+        if answer == "yes":
+           print("Creating a new one...")
+           mkdir(CONFIGPATH + dir)
+           print("ok")
+        else:
+           continue
+    else:
+        print("This dir exists!")
+
+for file in files:
+    fin = open(file, "r", encoding="utf-8")
+    fout = open(CONFIGPATH + file, "w", encoding="utf-8")
+    for line in fin:
+        fout.write(line)
+    fin.close()
+    fout.close()
