@@ -39,6 +39,7 @@ if [ "$os" = "Darwin" ]; then
         'node'
         'yarn'
         'meson'
+        'php'
         'rustup-init'
     )
 
