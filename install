@@ -1,63 +1,118 @@
-#!/usr/bin/env python3
+#!/bin/sh
 
-from sys import platform 
-from os import path, listdir, mkdir, environ
-from shutil import which
+echo "dotfiles 2.0 by heimdalllr"
+echo "This script will setup up your *nix system"
+echo ""
 
-print("Dotfiles by quant0x2")
+echo "Checking operating system..."
+os="$(uname)"
 
-if platform == "darwin":
-    print("Hello, macOS!")
-elif platform == "linux":
-    print("Hello, Tux!")
+if [ "$os" = "Darwin" ]; then
+    echo "Hello macOS!"
+    echo "Checking package manager installation..."
 
-CONFIGPATH = environ["HOME"] + "/.config/"
+    # Getting brew path
+    manager="$(which brew)"
 
-if not path.exists(CONFIGPATH):
-    print(".config folder doesn't exist!")
-    print("creating a new one...")
-    mkdir(CONFIGPATH)
-    print("ok")
-else:
-    print(".config folder exists!")
+    if [ manager != "" ]; then
+        echo "Homebrew is installed"
+    else 
+        echo "Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    fi
 
-exclude = [".git","chrome", "gtk", "emacs.d"]
+    echo "Installing formulas..."
 
-files = []
-directories = []
+    pkgs=(
+        'fish' 
+        'clojure' 
+        'ninja' 
+        'cmake' 
+        'tmux' 
+        'neovim' 
+        'qemu' 
+        'htop' 
+        'python@3.9' 
+        'crystal' 
+        'ruby' 
+        'go'
+        'node'
+        'yarn'
+        'meson'
+        'rustup-init'
+    )
 
-for fin in listdir():
-    if path.isdir(fin) and fin not in exclude:
-        if which(fin):
-            directories += [fin]
-            folders = [fin]
-            for folder in folders:
-                for file in listdir(folder):
-                    position = folder+"/"+file
-                    if path.isfile(position):
-                        files += [position]
-                    elif path.isdir(position):
-                        folders += [position]
-                        directories += [position]
+    for pkg in "${pkgs[@]}"; do
+        brew install $pkg
+    done   
 
-for dir in directories:
-    print(dir)
-    if not path.exists(CONFIGPATH + dir):
-        print("This dir does not exist!")
-        answer = input("Create a new dir? yes or no\n")
-        if answer == "yes":
-           print("Creating a new one...")
-           mkdir(CONFIGPATH + dir)
-           print("ok")
-        else:
-           continue
-    else:
-        print("This dir exists!")
+    echo "Changing default shell to fish..."    
+    if chsh -s /usr/local/bin/fish; then 
+        echo "OK"
+    else 
+        echo "Can't change default shell to fish"
+        echo "Exiting..."
+        exit
+    fi
 
-for file in files:
-    fin = open(file, "r", encoding="utf-8")
-    fout = open(CONFIGPATH + file, "w", encoding="utf-8")
-    for line in fin:
-        fout.write(line)
-    fin.close()
-    fout.close()
+    echo "Installing official alternate cask versions repo..."
+    brew tap homebrew/cask-versions
+    echo "OK"
+
+    echo "Installing casks..."    
+    casks=(
+        'visual-studio-code'
+        'firefox'
+        'firefox-developer-edition'
+        'google-chrome-dev'
+        'intellij-idea-ce'
+        'discord'
+        'iterm2'
+        'notion'
+        'telegram'
+        'spotify'
+        'docker'
+    )
+
+    for cask in "${casks[@]}"; do 
+        brew install --cask $cask
+    done
+
+    echo "Installing official cask font repo..."
+    brew tap homebrew/cask-fonts
+    echo "OK"
+
+    echo "Installing fonts..."
+    brew install font-jetbrains-mono font-roboto-mono
+    echo "OK"
+
+    echo "Installing Rust toolkit..."
+    rustup-init
+    fish -c fish_add_path ~/.cargo/bin
+    echo "OK"
+    
+    echo "Installing Heroku and Firebase tools..."
+    fish -c npm install -g heroku
+    echo "OK"
+    fish -c npm install -g firebase-tools
+    echo "OK"
+
+    echo "Setting up Ruby..."
+    fish -c fish_add_path /usr/local/opt/ruby/bin
+    gem update --system
+    echo "OK"
+
+    echo "Installing configs..."
+    
+    echo "Fish Shell:"
+    mkdir -p ~/.config/fish
+    cp -r fish ~/.config/fish
+    echo "OK"
+
+    echo "Done!"
+elif [ "$os" = "Linux" ]; then
+    echo "Hello Tux!"
+    echo "TODO: Write Linux version of the script"
+else
+    echo "This script doesn't support your system!"
+fi
