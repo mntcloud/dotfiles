@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "dotfiles 2.0 by heimdalllr"
+echo "dotfiles 0.2 by mntcloud"
 echo "This script will setup up your *nix system"
 echo ""
 
