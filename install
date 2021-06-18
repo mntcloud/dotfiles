@@ -14,7 +14,7 @@ if [ "$os" = "Darwin" ]; then
     # Getting brew path
     manager="$(which brew)"
 
-    if [ manager != "" ]; then
+    if [[ -n $manager ]]; then
         echo "Homebrew is installed"
     else 
         echo "Installing Homebrew..."
