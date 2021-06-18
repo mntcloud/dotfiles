@@ -45,6 +45,7 @@ if [ "$os" = "Darwin" ]; then
     )
 
     for pkg in "${pkgs[@]}"; do
+	echo "Installing $pkg..."
         brew install $pkg
     done   
 
