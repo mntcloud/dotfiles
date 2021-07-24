@@ -58,37 +58,6 @@ if [ "$os" = "Darwin" ]; then
         exit
     fi
 
-    echo "Installing official alternate cask versions repo..."
-    brew tap homebrew/cask-versions
-    echo "OK"
-
-    echo "Installing casks..."    
-    casks=(
-        'visual-studio-code'
-        'firefox'
-        'firefox-developer-edition'
-        'google-chrome-dev'
-        'intellij-idea-ce'
-        'discord'
-        'iterm2'
-        'notion'
-        'telegram'
-        'spotify'
-        'docker'
-    )
-
-    for cask in "${casks[@]}"; do 
-        brew install --cask $cask
-    done
-
-    echo "Installing official cask font repo..."
-    brew tap homebrew/cask-fonts
-    echo "OK"
-
-    echo "Installing fonts..."
-    brew install font-jetbrains-mono font-roboto-mono
-    echo "OK"
-
     echo "Installing Rust toolkit..."
     rustup-init
     fish -c (fish_add_path ~/.cargo/bin)
