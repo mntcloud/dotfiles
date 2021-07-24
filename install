@@ -49,15 +49,6 @@ if [ "$os" = "Darwin" ]; then
         brew install $pkg
     done   
 
-    echo "Changing default shell to fish..."    
-    if chsh -s /usr/local/bin/fish; then 
-        echo "OK"
-    else 
-        echo "Can't change default shell to fish"
-        echo "Exiting..."
-        exit
-    fi
-
     echo "Installing Rust toolkit..."
     rustup-init
     fish -c (fish_add_path ~/.cargo/bin)
