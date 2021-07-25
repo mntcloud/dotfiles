@@ -51,18 +51,18 @@ if [ "$os" = "Darwin" ]; then
 
     echo "Installing Rust toolkit..."
     rustup-init
-    fish -c (fish_add_path ~/.cargo/bin)
+    fish -c "fish_add_path ~/.cargo/bin"
     echo "OK"
     
     echo "Installing Heroku and Firebase tools..."
-    fish -c (npm install -g heroku)
+    fish -c "npm install -g heroku"
     echo "OK"
-    fish -c (npm install -g firebase-tools)
+    fish -c "npm install -g firebase-tools"
     echo "OK"
 
     echo "Setting up Ruby..."
-    fish -c (fish_add_path /usr/local/opt/ruby/bin)
-    fish -c (gem update --system)
+    fish -c "fish_add_path /usr/local/opt/ruby/bin"
+    fish -c "gem update --system"
     echo "OK"
 
     echo "Installing configs..."
