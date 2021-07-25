@@ -31,7 +31,8 @@ if [ "$os" = "Darwin" ]; then
         'tmux' 
         'neovim' 
         'qemu' 
-        'htop' 
+        'htop'
+	'git' # overlap git from the command line tools
         'python@3.9' 
         'crystal' 
         'ruby' 
