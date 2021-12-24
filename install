@@ -20,7 +20,9 @@ if [ "$os" = "Darwin" ]; then
         echo "Installing Homebrew..."
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     fi
-
+    
+    brew bundle
+    
     echo "Installing Rust toolkit..."
     rustup-init
     fish -c "fish_add_path ~/.cargo/bin"
