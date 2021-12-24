@@ -21,35 +21,6 @@ if [ "$os" = "Darwin" ]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     fi
 
-    echo "Installing formulas..."
-
-    pkgs=(
-        'fish' 
-        'clojure' 
-        'ninja' 
-        'cmake' 
-        'tmux' 
-        'neovim' 
-        'qemu' 
-        'htop'
-	'git' # overlap git from the command line tools
-        'python@3.9' 
-        'crystal' 
-        'ruby' 
-        'go'
-        'node'
-        'yarn'
-        'meson'
-        'php'
-        'deno'
-        'rustup-init'
-    )
-
-    for pkg in "${pkgs[@]}"; do
-	echo "Installing $pkg..."
-        brew install $pkg
-    done   
-
     echo "Installing Rust toolkit..."
     rustup-init
     fish -c "fish_add_path ~/.cargo/bin"
