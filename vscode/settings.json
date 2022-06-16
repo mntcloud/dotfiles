@@ -1,0 +1,70 @@
+{
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "IBM Plex Mono",
+    "window.autoDetectColorScheme": true,
+    "breadcrumbs.enabled": false,
+    "workbench.preferredDarkColorTheme": "Material Theme Darker High Contrast",
+    "editor.tokenColorCustomizations": {
+        "[Material Theme Lighter High Contrast]": {
+            "keywords": {
+                "fontStyle": "",
+            }
+        },
+        "[Material Theme Darker High Contrast]": {
+            "keywords": {
+                "fontStyle": ""
+            }
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[Material Theme Darker High Contrast]": { 
+            "editor.background": "#1a1a1a",
+            "tab.activeBackground": "#1d2d2c",
+            "tab.inactiveBackground": "#1a1a1a",
+            "sideBar.background": "#0f0f0f",
+            "sideBarSectionHeader.background": "#0f0f0f",
+            "activityBar.background": "#0f0f0f",
+            "statusBar.background": "#0f0f0f",
+            "titleBar.border": "#1a1a1a",
+            "editorGroupHeader.tabsBorder": "#2a2a2a",
+            "tab.border": "#2a2a2a",
+            "scrollbarSlider.activeBackground": "#0f0f0f"
+        },
+        "[Material Theme Lighter High Contrast]": {
+            "editor.background": "#ffffff",
+            "gitDecoration.untrackedResourceForeground": "#698641d7",
+            "gitDecoration.modifiedResourceForeground": "#6182b8be",
+            "tab.border": "#cbcbcb60",
+            "editorGroupHeader.tabsBackground": "#f7f7f7",
+            "titleBar.inactiveBackground": "#fafafa",
+            "editorGroupHeader.tabsBorder": "#cbcbcb60",
+            "statusBarItem.prominentBackground": "#80cbc35f",
+            "tab.inactiveBackground": "#fafafa",
+            "tab.activeBackground": "#fefefe",
+            "editorGroup.dropBackground": "#80cbc36a",
+            "statusBar.background": "#fafafa",
+            "statusBar.border": "#cbcbcb60",
+            "sideBar.background": "#f6f6f6",
+            "button.background": "#80cbc3bc",
+            "activityBar.foreground": "#6a7980",
+        }
+    },
+    "workbench.preferredLightColorTheme": "Night Owl Light (No Italics)",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": false,
+    "evenBetterToml.taploConfigEnabled": false,
+    "editor.bracketPairColorization.enabled": false,
+    "evenBetterToml.schema.repositoryEnabled": false,
+    "evenBetterToml.schema.enabled": false,
+    "evenBetterToml.formatter.trailingNewline": false,
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "haskell.manageHLS": "GHCup"
+}

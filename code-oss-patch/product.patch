@@ -1,0 +1,18 @@
+--- product.json	2022-06-17 01:08:06.000000000 +0300
++++ product.new.json	2022-06-17 01:10:58.000000000 +0300
+@@ -34,8 +34,13 @@
+ 	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/{{quality}}/{{commit}}/out/vs/workbench/contrib/webview/browser/pre/",
+ 	"quality": "stable",
+ 	"extensionsGallery": {
+-		"serviceUrl": "https://open-vsx.org/vscode/gallery",
+-		"itemUrl": "https://open-vsx.org/vscode/item"
++		"nlsBaseUrl": "https://www.vscode-unpkg.net/_nls/",
++		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
++		"cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
++		"itemUrl": "https://marketplace.visualstudio.com/items",
++		"publisherUrl": "https://marketplace.visualstudio.com/publishers",
++		"resourceUrlTemplate": "https://{publisher}.vscode-unpkg.net/{publisher}/{name}/{version}/{path}",
++		"controlUrl": "https://az764295.vo.msecnd.net/extensions/marketplace.json"
+ 	},
+ 	"extensionTips": {
+ 		"ms-dotnettools.csharp": "{**/*.cs,**/project.json,**/global.json,**/*.csproj,**/*.cshtml,**/*.sln,**/appsettings.json}",

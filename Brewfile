@@ -17,6 +17,9 @@ brew 'yarn'
 brew 'meson'
 brew 'php'
 brew 'rustup-init'
+brew 'hugo'
+brew 'ghcup'
+brew 'dotnet'
 
 tap 'homebrew/cask-versions'
 
