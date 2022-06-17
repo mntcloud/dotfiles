@@ -1,4 +1,4 @@
-source common.fish
+source ./common.fish
 
 #set DEBUG "True"
 
@@ -22,4 +22,4 @@ run gem update --system
     
 echo "Setting up fish shell..."
 run mkdir -p $HOME/.config/fish
-run cp -r fish $HOME/.config/fish
+run cp -r ../fish/ $HOME/.config/fish

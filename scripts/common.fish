@@ -5,8 +5,8 @@ function run
         set_color brblack
         echo "Running: $argv"
         set_color normal
-        command $argv
+        $argv
         and return
     end
     sleep 1
-end 
+end
