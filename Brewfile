@@ -23,7 +23,8 @@ brew 'dotnet'
 
 tap 'homebrew/cask-versions'
 
-cask 'visual-studio-code'
+# cask 'visual-studio-code'
+cask 'sublime-text'
 cask 'firefox'
 cask 'firefox-developer-edition'
 cask 'google-chrome-dev'
