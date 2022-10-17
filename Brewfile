@@ -20,6 +20,7 @@ brew 'rustup-init'
 brew 'hugo'
 brew 'ghcup'
 brew 'dotnet'
+brew 'podman'
 
 tap 'homebrew/cask-versions'
 

@@ -1,0 +1,35 @@
+// Settings in here override those in "LSP/LSP.sublime-settings"
+{
+    "clients": {
+        "LSP-typescript": {
+            "enabled": false,
+        },
+        "deno": {
+            "enabled": false,
+            "command": [ "deno", "lsp"],
+            "settings": {
+                "deno.codeLens.implementations": false,
+                "deno.codeLens.references": false,
+                "deno.codeLens.referencesAllFunctions": false,
+                "deno.codeLens.test": true,
+                "deno.codeLens.testArgs": [
+                    "--allow-all"
+                ],
+                "deno.config": null,
+                "deno.enable": true,
+                "deno.importMap": null,
+                "deno.internalDebug": false,
+                "deno.lint": true,
+                "deno.suggest.autoImports": true,
+                "deno.suggest.completeFunctionCalls": false,
+                "deno.suggest.imports.autoDiscover": true,
+                "deno.suggest.imports.hosts": {},
+                "deno.suggest.names": true,
+                "deno.suggest.paths": true,
+                "deno.unstable": false,
+            },
+            "schemes": ["file", "deno"],
+            "selector": "source.ts.react | source.tsx | source.ts | source.js.react | source.jsx | source.js",
+        }, 
+    },
+}

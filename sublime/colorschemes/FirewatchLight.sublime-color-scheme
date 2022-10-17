@@ -1,0 +1,375 @@
+{
+    "name": "Firewatch Light",
+    "variables": {
+        "uno_1": "#2d2006",
+        "uno_2": "#896724",
+        "uno_3": "#B29762",
+        "uno_4": "#B6ad9a",
+        
+        "duo_1": "#065289",
+        "duo_2": "#718ecd",
+        "duo_3": "#aeb3b7",
+
+        "syntax_color_renamed": "#33a0ff",
+        "syntax_color_added": "#43d08a",
+        "syntax_color_modified": "#e0c285",
+        "syntax_color_removed": "#e05252",
+
+        "syntax_bg": "#FAF8F5",
+        "syntax_fg": "var(uno_2)",
+        "syntax_accent": "#447EBB",
+        "syntax_gutter": "#EAE1D2",
+        "syntax_selection": "#E5DDCB",
+        "syntax_fold_bg": "#d1cec7",
+        "syntax_cursor_line": "#F3EFE7"
+    },
+    "globals": {
+        "background": "var(syntax_bg)",
+        "foreground": "var(syntax_fg)",
+        "invisibles": "#5c61664d",
+        "caret": "var(syntax_accent)",
+        "block_caret": "var(syntax_cursor_line)",
+        "line_highlight": "var(syntax",
+        "accent": "var(syntax_accent)",
+        "gutter": "var(syntax_bg)",
+        "gutter_foreground": "var(uno_4)",
+        "line_diff_width": "3",
+        "line_diff_added": "var(syntax_color_added)",
+        "line_diff_modified": "var(syntax_color_modified)",
+        "line_diff_deleted": "var(syntax_color_removed)",
+        "selection": "var(syntax_selection)",
+        "selection_border": "var(syntax_selection)",
+        "selection_border_width": "1",
+        "inactive_selection": "#5696d61a",
+        "inactive_selection_border": "#5696d61a",
+        "selection_corner_style": "round",
+        "selection_corner_radius": "4",
+        "shadow": "#fcfcfc50",
+        "shadow_width": "2"
+    },
+    "rules": [
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "font_style": "italic",
+            "foreground": "var(uno_4)"
+        },
+        {
+            "name": "String",
+            "scope": "string - meta.template, constant.other.symbol, string.quoted",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Regular Expressions and Escape Characters",
+            "scope": "string.regexp, constant.character, constant.other",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Number",
+            "scope": "constant.numeric",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Built-in constants",
+            "scope": "constant.language",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Constants",
+            "scope": "meta.constant, entity.name.constant",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Variable",
+            "scope": "variable",
+            "foreground": "var(uno_2)"
+        },
+        {  
+            "name": "JS/TS Variables",
+            "scope": "variable.other.readwrite.js",
+            "foreground": "var(uno_2)"
+        },
+        {
+            "name": "Member Variable",
+            "scope": "variable.member",
+            "foreground": "var(syntax_accent)"
+        },
+        {
+            "name": "Language variable",
+            "scope": "variable.language",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Storage",
+            "scope": "storage, storage.type.keyword",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Storage",
+            "scope": "storage.type.source",
+            "foreground": "var(uno_2)"
+        },
+        {
+            "name": "Keyword",
+            "scope": "keyword",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Java keyword fixes",
+            "scope": "source.java meta.class.java meta.class.identifier.java storage.type.java",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Operators",
+            "scope": "keyword.operator",
+            "foreground": "var(syntax_accent)"
+        },
+        {
+            "name": "Separators like ; or ,",
+            "scope": "punctuation.separator, punctuation.terminator",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Punctuation",
+            "scope": "punctuation.section",
+            "foreground": "var(syntax_accent)"
+        },
+        {
+            "name": "Accessor",
+            "scope": "punctuation.accessor",
+            "foreground": "var(syntax_accent)"
+        },
+        {
+            "name": "JavaScript/TypeScript interpolation punctuation",
+            "scope": "punctuation.definition.template-expression",
+            "foreground": "var(syntax_accent)"
+        },
+        {
+            "name": "JSX/TSX curly braces",
+            "scope": "punctuation.definition.interpolation",
+            "foreground": "var(duo_3)"
+        },
+        {  
+            "name": "Brackets/Braces",
+            "scope": "punctuation.section",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "String Quotes/Arrows",
+            "scope": "punctuation.definition.string",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Generics",
+            "scope": "punctuation.definition.generic",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Ruby interpolation punctuation",
+            "scope": "punctuation.section.interpolation",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Types fixes",
+            "scope": "source.java storage.type, source.haskell storage.type, source.c storage.type, source.zig storage.type",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Inherited class type",
+            "scope": "entity.other.inherited-class",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Lambda arrow",
+            "scope": "storage.type.function",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Java primitive variable types",
+            "scope": "source.java storage.type.primitive",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Function name",
+            "scope": "entity.name.function",
+            "foreground": "var(uno_2)"
+        },
+        {
+            "name": "Function arguments",
+            "scope": "variable.parameter, meta.parameter",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Function call",
+            "scope": "variable.function, variable.annotation, meta.function-call.generic, support.function.go",
+            "foreground": "var(uno_2)"
+        },
+        {
+            "name": "Library function",
+            "scope": "support.function, support.macro",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Imports and packages",
+            "scope": "entity.name.import, entity.name.package",
+            "foreground": "var(duo_3)"
+        },
+        {
+            "name": "Entity name",
+            "scope": "entity.name, source.js meta.function-call.constructor variable.type",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Tag",
+            "scope": "entity.name.tag, meta.tag.sgml",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Tag start/end",
+            "scope": "punctuation.definition.tag.end, punctuation.definition.tag.begin, punctuation.definition.tag",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Tag attribute",
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Library constant",
+            "scope": "support.constant",
+            "font_style": "italic",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Library class/type",
+            "scope": "support.type, support.class, source.go storage.type",
+            "foreground": "var(duo_2)"
+        }, 
+        {
+            "name": "Decorators/annotation",
+            "scope": "meta.decorator variable.other, meta.decorator punctuation.decorator, storage.type.annotation, variable.annotation, punctuation.definition.annotation",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Invalid",
+            "scope": "invalid",
+            "foreground": "#e65050"
+        },
+        {
+            "name": "diff.header",
+            "scope": "meta.diff, meta.diff.header",
+            "foreground": "var(uno_2)"
+        },
+        {
+            "name": "Ruby:ClassMethods",
+            "scope": "source.ruby variable.other.readwrite",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Ruby:VariableParameter",
+            "scope": "source.ruby meta.block.parameters variable.parameter",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Ruby:Symbol",
+            "scope": "source.ruby constant.other.symbol",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Ruby:FunctionBuiltin",
+            "scope": "source.ruby support.function.builtin",
+            "foreground": "var(duo_2)"
+        },
+        {
+            "name": "Ruby:Class",
+            "scope": "source.ruby support.class",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Ruby:ModuleName",
+            "scope": "source.ruby entity.name.namespace",
+            "foreground": "var(uno_2)"
+        },
+        {
+            "name": "Ruby:ClassName",
+            "scope": "source.ruby entity.name.class",
+            "foreground": "var(uno_2)"
+        }, 
+        {
+            "name": "CSS tag names",
+            "scope": "source.css entity.name.tag, source.sass entity.name.tag, source.scss entity.name.tag, source.less entity.name.tag, source.stylus entity.name.tag",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "CSS browser prefix",
+            "scope": "source.css support.type, source.sass support.type, source.scss support.type, source.less support.type, source.stylus support.type",
+            "foreground": "var(syntax_accent)"
+        },
+        {
+            "name": "CSS Properties",
+            "scope": "support.type.property-name",
+            "font_style": "normal",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "scope": "message.error",
+            "foreground": "var(uno_1)"
+        },
+        {
+            "name": "Markup heading",
+            "scope": "markup.heading, markup.heading entity.name",
+            "font_style": "bold",
+            "foreground": "var(duo_3)"
+        },
+        {
+            "name": "Markup links",
+            "scope": "markup.underline.link, string.other.link",
+            "foreground": "var(duo_1)"
+        },
+        {
+            "name": "Markup Italic",
+            "scope": "markup.italic",
+            "font_style": "italic",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Markup Bold",
+            "scope": "markup.bold",
+            "font_style": "bold",
+            "foreground": "var(uno_2)"
+        },
+        {
+            "name": "Markup Bold/italic",
+            "scope": "markup.italic markup.bold, markup.bold markup.italic",
+            "font_style": "bold italic"
+        },
+        {
+            "name": "Markup Code",
+            "scope": "markup.raw",
+            "background": "var(duo_1)"
+        },
+        {
+            "name": "Markup Code Inline",
+            "scope": "markup.raw.inline",
+            "background": "var(duo_1)"
+        },
+        {
+            "name": "Markdown Separator",
+            "scope": "meta.separator",
+            "font_style": "bold",
+            "background": "#5c61660f",
+            "foreground": "var(uno_3)"
+        },
+        {
+            "name": "Markup Blockquote",
+            "scope": "markup.quote",
+            "foreground": "var(uno_2)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markup List Bullet",
+            "scope": "markup.list punctuation.definition.list.begin",
+            "foreground": "var(uno_1)"
+        },
+    ]
+}

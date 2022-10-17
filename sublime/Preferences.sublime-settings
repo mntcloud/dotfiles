@@ -1,0 +1,11 @@
+{
+	"color_scheme": "auto",
+	"theme": "Adaptive.sublime-theme",
+	"dark_color_scheme": "Jellybeans.sublime-color-scheme",
+	"light_color_scheme": "FirewatchLight.sublime-color-scheme",
+	"font_face": "IBM Plex Mono",
+	"ignored_packages": ["Markdown",
+		"Rust",
+	],
+	"translate_tabs_to_spaces": true,
+}
