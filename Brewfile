@@ -22,6 +22,7 @@ brew 'hugo'
 brew 'ghcup'
 brew 'dotnet'
 brew 'podman'
+brew 'podman-compose'
 
 tap 'homebrew/cask-versions'
 
