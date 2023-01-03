@@ -23,6 +23,12 @@ brew 'ghcup'
 brew 'dotnet'
 brew 'podman'
 brew 'podman-compose'
+brew 'rakudo'
+brew 'nasm'
+brew 'nim'
+brew 'leiningen'
+brew 'radare2'
+brew 'openjdk@11'
 
 tap 'homebrew/cask-versions'
 
