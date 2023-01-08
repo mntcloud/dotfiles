@@ -36,8 +36,11 @@ tap 'homebrew/cask-versions'
 cask 'sublime-text'
 cask 'thunderbird'
 cask 'firefox'
+cask 'google-chrome'
+
 cask 'firefox-developer-edition'
 cask 'google-chrome-dev'
+
 cask 'jetbrains-toolbox'
 cask 'discord'
 cask 'iterm2'
